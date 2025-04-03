@@ -12,6 +12,6 @@ struct CardModel {
 }
 
 
-extension CardModel: Identifiable {
+extension CardModel: Identifiable, Hashable {
     var id: String { return user.id}
 }

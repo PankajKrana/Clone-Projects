@@ -63,18 +63,23 @@ private extension CardView {
     }
     
     func swipeRight() {
-        xOffset = 500
-        degree = 12
-        
-        viewModel.removeCard(model)
+        withAnimation {
+            xOffset = 500
+            degree = 12
+        } completion: {
+            viewModel.removeCard(model)
+        }
+
     }
     
     func swipeLeft() {
-        xOffset = -500
-        degree = -12
-        
-        
-        viewModel.removeCard(model)
+        withAnimation {
+            xOffset = -500
+            degree = -12
+        } completion: {
+            viewModel.removeCard(model)
+
+        }
     }
 }
 
